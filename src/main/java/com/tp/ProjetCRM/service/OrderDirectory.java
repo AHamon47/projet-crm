@@ -21,19 +21,19 @@ public class OrderDirectory {
 		return orderRepository.findAll();
 	}
 
-	public Optional<Order> getOrder(Long id) {
+	public Optional<Order> getOrder(Integer id) {
 		return orderRepository.findById(id);
 	}
 
-	public void deleteOrder(Long id){
+	public void deleteOrder(Integer id){
 		orderRepository.deleteById(id);
 	}
 
-	public void updateOrder(Order orderToUpdate, Long id){
+	public void updateOrder(Order orderToUpdate, Integer id){
 		orderRepository.save(orderToUpdate);
 	}
 
-	public void patchOrder(Order orderToUpdate, Long id){
+	public void patchOrder(Order orderToUpdate, Integer id){
 		Optional<Order> op = orderRepository.findById(id);
 		if(op.isPresent()){
 			Order order = op.get();

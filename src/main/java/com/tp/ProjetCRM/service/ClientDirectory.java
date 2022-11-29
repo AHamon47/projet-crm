@@ -22,19 +22,19 @@ public class ClientDirectory {
 		return clientRepository.findAll();
 	}
 
-	public Optional<Client> getClient(Long id) {
+	public Optional<Client> getClient(Integer id) {
 		return clientRepository.findById(id);
 	}
 
-	public void deleteClient(Long id){
+	public void deleteClient(Integer id){
 		clientRepository.deleteById(id);
 	}
 
-	public void updateClient(Client clientToUpdate, Long id){
+	public void updateClient(Client clientToUpdate, Integer id){
 		clientRepository.save(clientToUpdate);
 	}
 
-	public void patchClient(Client clientToUpdate, Long id){
+	public void patchClient(Client clientToUpdate, Integer id){
 		Optional<Client> op = clientRepository.findById(id);
 		if(op.isPresent()){
 			Client client = op.get();

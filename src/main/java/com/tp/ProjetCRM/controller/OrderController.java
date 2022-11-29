@@ -30,7 +30,7 @@ public class OrderController {
 	}
 
 	@GetMapping("orders/{id}")
-	public ResponseEntity<Order> getOrder(@PathVariable("id") Long id) {
+	public ResponseEntity<Order> getOrder(@PathVariable("id") Integer id) {
 		Optional<Order> optionalOrder = orderDirectory.getOrder(id);
 		if (optionalOrder.isEmpty()) {
 			return ResponseEntity.notFound().build();
@@ -46,12 +46,12 @@ public class OrderController {
 	}
 
 	@DeleteMapping("orders/{id}")
-	public void deleteOrder(@PathVariable("id") Long id) {
+	public void deleteOrder(@PathVariable("id") Integer id) {
 		orderDirectory.deleteOrder(id);
 	}
 
 	@PutMapping("orders/{id}")
-	public ResponseEntity updateOrder(@RequestBody Order order, @PathVariable("id") Long id) {
+	public ResponseEntity updateOrder(@RequestBody Order order, @PathVariable("id") Integer id) {
 
 		if (id != order.getId()) {
 			return ResponseEntity.badRequest().build();
@@ -63,7 +63,7 @@ public class OrderController {
 	}
 
 	@PatchMapping("orders/{id}")
-	public void patchOrder(@RequestBody Order order, @PathVariable("id") Long id) {
+	public void patchOrder(@RequestBody Order order, @PathVariable("id") Integer id) {
 		System.out.println(order);
 		orderDirectory.patchOrder(order, id);
 	}

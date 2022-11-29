@@ -7,9 +7,8 @@ import javax.persistence.*;
 public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer id;
 	@ManyToOne
-	@Column(name = "client_id")
 	private Client client;
 	@Column(name="type_presta")
 	private String typePresta;
@@ -35,11 +34,11 @@ public class Order {
 		
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
