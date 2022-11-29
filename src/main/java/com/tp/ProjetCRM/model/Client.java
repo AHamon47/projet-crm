@@ -32,7 +32,6 @@ public class Client {
 
 	public Client(String companyName, String firstName, String lastName, String email, String phone, String address,
 			String zipCode, String city, String country, boolean state) {
-		super();
 		this.companyName = companyName;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -54,6 +53,7 @@ public class Client {
 	}
 
 	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getCompanyName() {
