@@ -19,7 +19,7 @@ public class Client {
 	private String email;
 	@Column(name = "phone")
 	private String phone;
-	@Column(name = "address")
+	@Column(name = "address", columnDefinition = "TEXT")
 	private String address;
 	@Column(name = "zip_code")
 	private String zipCode;
