@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	@ManyToOne
 	@Column(name = "client_id")
 	private Client client;

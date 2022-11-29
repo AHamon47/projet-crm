@@ -8,7 +8,7 @@ public class Client {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	@Column(name = "company_name")
 	private String companyName;
 	@Column(name = "first_name")
