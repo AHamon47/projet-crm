@@ -18,10 +18,10 @@ public class Order {
 	private Integer nbDays;
 	@Column(name="unit_price")
 	private Float unitPrice;
-	@Column(name="state")
-	private Boolean state;
+	@Column(name = "state", columnDefinition = "BIT")
+	private OrderState state;
 	
-	public Order(Client client, String typePresta, String designation, Integer nbDays, Float unitPrice, Boolean state) {
+	public Order(Client client, String typePresta, String designation, Integer nbDays, Float unitPrice, OrderState state) {
 		this.client = client;
 		this.typePresta = typePresta;
 		this.designation = designation;
@@ -82,11 +82,11 @@ public class Order {
 		this.unitPrice = unitPrice;
 	}
 
-	public Boolean getState() {
+	public OrderState getState() {
 		return state;
 	}
 
-	public void setState(Boolean state) {
+	public void setState(OrderState state) {
 		this.state = state;
 	}
 

@@ -27,11 +27,11 @@ public class Client {
 	private String city;
 	@Column(name = "country")
 	private String country;
-	@Column(name = "state")
-	private Boolean state;
+	@Column(name = "state", columnDefinition = "BIT")
+	private ClientState state;
 
 	public Client(String companyName, String firstName, String lastName, String email, String phone, String address,
-			String zipCode, String city, String country, boolean state) {
+			String zipCode, String city, String country, ClientState state) {
 		this.companyName = companyName;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -128,11 +128,11 @@ public class Client {
 		this.country = country;
 	}
 
-	public Boolean isState() {
+	public ClientState getState() {
 		return state;
 	}
 
-	public void setState(boolean state) {
+	public void setState(ClientState state) {
 		this.state = state;
 	}
 
@@ -173,8 +173,8 @@ public class Client {
 		if(dataToUpdate.getCountry() != null)	{
 			this.country = dataToUpdate.getCountry();
 		}
-		if(dataToUpdate.isState() != null)	{
-			this.state = dataToUpdate.isState();
+		if(dataToUpdate.getState() != null)	{
+			this.state = dataToUpdate.getState();
 		}
 	}
 }
